@@ -15,6 +15,7 @@
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#apropos">À propos</a></li>
                 <li><a href="#formation">Formation</a></li>
+                <li><a href="#experience">Expérience</a></li>
                 <li><a href="#competences">Compétences</a></li>
                 <li><a href="#projets">Projets</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -156,6 +157,25 @@
                     <div class="school">Lycée Fulbert à Chartres</div>
                     <div class="period">2024 - 2025 </div>
                     <div class="desc">Validation des compétences numériques essentielles et avancées.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>Expérience</h2>
+            <div class="formation-item experience-item">
+                <div class="formation-icon">
+                    <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/>
+                    </svg>
+                </div>
+                <div class="formation-content">
+                    <h3>Stage en informatique</h3>
+                    <div class="school">Les PEP 28</div>
+                    <div class="period">Mai-Juin 2025</div>
+                    <div class="desc">Stage en entreprise axé sur la maintenance, le support utilisateur et la configuration système.</div>
                 </div>
             </div>
         </div>
@@ -465,7 +485,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.card, .formation-item, .projet-card').forEach(el => {
+        document.querySelectorAll('.card, .formation-item, .projet-card, .experience-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'all 0.6s ease';
