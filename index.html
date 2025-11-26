@@ -74,11 +74,9 @@
                     <h3>Qui suis-je ?</h3>
                     <br>
                     <p>
-                        Étudiant en BTS SIO option SISR, je me spécialise dans l'administration des systèmes, réseaux et la cybersécurité. Je suis passionné par la protection des infrastructures informatiques et l'optimisation des performances réseau.
-                    </p>
+                        Actuellement étudiant en BTS SIO, option SISR, je me spécialise dans l’administration des systèmes, des réseaux et dans la cybersécurité. J’aime particulièrement tout ce qui touche à la protection des infrastructures informatiques et à l'amélioration des performances réseau.                    </p>
                     <p style="margin-top: 1rem;">
-                        Au-delà de la technique, je suis animé par l’échange et la collaboration : j’aime travailler en équipe, partager mes connaissances et apprendre des autres. Curieux et à l’écoute, je cherche toujours à comprendre les besoins et les attentes pour apporter des solutions pertinentes.                    </p>
-                </div>
+                        Au-delà de l’aspect technique, j’accorde beaucoup d’importance aux échanges et au travail d’équipe. J’aime partager mes connaissances, apprendre des autres et collaborer pour avancer ensemble. Curieux et attentif, je m’efforce toujours de comprendre les besoins de chacun afin de proposer des solutions adaptées et utiles.                </div>
                 <div class="card">
                     <h3>Mes objectifs</h3>
                     <div class="goal-item">
@@ -173,7 +171,7 @@
                 </div>
                 <div class="formation-content">
                     <h3>Stage en informatique</h3>
-                    <div class="school">Les PEP 28</div>
+                    <div class="school">Les PEP 28 à Chartres</div>
                     <div class="period">Mai-Juin 2025</div>
                     <div class="desc">Stage en entreprise axé sur la maintenance, le support utilisateur et la configuration système.</div>
                 </div>
@@ -215,7 +213,7 @@
                     <h3>Systèmes</h3>
                     <div>
                         <span class="skill-tag">Windows Server</span>
-                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Linux Mint</span>
                         <span class="skill-tag">Ubuntu</span>
                         <span class="skill-tag">Active Directory</span>
                         <span class="skill-tag">Virtualisation</span>
@@ -226,6 +224,7 @@
                     <h3>Outils</h3>
                     <div>
                         <span class="skill-tag">Wireshark</span>
+                        <span class="skill-tag">Intélligence Artificielle</span>
                         <span class="skill-tag">Cisco Packet Tracer</span>
                         <span class="skill-tag">OpnSense</span>
                         <span class="skill-tag">VirtualBox - VMware - Proxmox</span>
@@ -263,7 +262,8 @@
         <div class="container">
             <h2>Mes Projets</h2>
             <div class="projets-grid">
-                <div class="projet-card">
+                <div class="projet-card featured-project">
+                    <div class="project-badge">⭐ Projet Phare</div>
                     <h3>Infrastructure Réseau - Projet BTS SIO SISR </h3>
                     <br>
                     <p class="projet-desc">Conception et mise en place d'une infrastructure réseau complète et sécurisée</p>
@@ -277,10 +277,10 @@
                 <div class="projet-card">
                     <h3>Jeu Cluedo - Projet BTS SIO SISR</h3>
                     <br>
-                    <p class="projet-desc">Développement et porgrammation d'un jeu en ligne</p>
+                    <p class="projet-desc">Développement et programmation d'un jeu en ligne (Projet non hébergé pour le moment.)</p>
                     <div class="tech-tags">
                     </div>
-                    <a href="https://example.com/serveur-web-securise" class="projet-link" target="_blank">
+                    <a href="..." class="projet-link" target="_blank">
                         Documentation du projet
                         <span>→</span>
                     </a>
@@ -291,7 +291,7 @@
                     <p class="projet-desc">En cours de production...</p>
                     <div class="tech-tags">
                     </div>
-                    <a href="https://example.com/audit-securite" class="projet-link" target="_blank">
+                    <a href="..." class="projet-link" target="_blank">
                         Documentation du projet
                         <span>→</span>
                     </a>
@@ -497,6 +497,14 @@
         const themeIcon = document.getElementById('themeIcon');
 
         themeToggle.addEventListener('click', () => {
+            // Ajouter l'animation de rotation
+            themeToggle.classList.add('rotating');
+            
+            // Retirer la classe après l'animation
+            setTimeout(() => {
+                themeToggle.classList.remove('rotating');
+            }, 600);
+            
             const isDarkMode = document.documentElement.classList.toggle('dark-mode');
             themeIcon.textContent = isDarkMode ? '🌙' : '☀️';
         });
