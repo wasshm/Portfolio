@@ -441,6 +441,10 @@ section h2::after {
     gap: 2rem;
 }
 
+#apropos .card h3 {
+    color: var(--primary);
+}
+
 .goal-item {
     display: flex;
     align-items: flex-start;
@@ -475,9 +479,27 @@ section h2::after {
     transition: all 0.3s ease;
 }
 
+/* Underline helper for emphasis inside descriptions */
+.underline {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--primary);
+    text-underline-offset: 3px;
+    font-weight: 600;
+}
+
 .formation-item:hover {
     transform: translateX(10px);
     box-shadow: var(--shadow-hover);
+}
+
+/* Remove spacing between sentences/paragraphs inside formation descriptions */
+.formation-content .desc,
+.formation-content .desc p,
+.formation-content p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.15; /* compact line-height, adjust if needed */
 }
 
 .formation-icon {
@@ -490,11 +512,48 @@ section h2::after {
     justify-content: center;
 }
 
+/* EXPERIENCE - style to clearly differentiate info */
+.experience-item {
+    border-left: none; /* removed blue bar */
+    padding-left: 2rem; /* increased left padding to match Formation cards */
+    background: var(--white); /* match formation item background */
+    transition: transform 0.15s ease;
+}
+.experience-item:hover {
+    transform: translateX(6px);
+    box-shadow: var(--shadow-hover);
+}
+.experience-item .school {
+    font-weight: 700;
+    color: var(--primary);
+}
+.experience-item .period {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    background: rgba(0,0,0,0.03);
+    padding: 0.18rem 0.6rem;
+    border-radius: 999px;
+    margin-top: 0.35rem;
+}
+.experience-item .desc {
+    margin-top: 0.4rem;
+    color: var(--text);
+    line-height: 1.4;
+}
+
 /* COMPÉTENCES */
 .competences-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+}
+
+/* Titres des catégories de compétences en couleur principale */
+.competences-grid .card h3 {
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 0.6rem;
 }
 
 .skill-tag {
@@ -520,8 +579,17 @@ section h2::after {
 /* PROJETS */
 .projets-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* Desktop: 3 colonnes identiques, chaque colonne a une largeur minimale pour garder le rendu */
+    grid-template-columns: repeat(3, minmax(260px, 1fr));
     gap: 2rem;
+    align-items: start;
+}
+
+/* Medium screens: 2 colonnes pour éviter le débordement */
+@media (max-width: 1100px) {
+    .projets-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .projet-card {
@@ -700,6 +768,30 @@ section h2::after {
     padding: 2rem;
     border-radius: 16px;
     box-shadow: var(--shadow);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+.social-section:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.social-section:hover::before {
+    transform: scaleX(1);
 }
 
 .social-links-grid {
@@ -758,20 +850,7 @@ section h2::after {
     display: inline-block;
 }
 
-.social-section h3::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary);
-    transition: width 0.3s ease;
-}
-
-.social-section h3:hover::after {
-    width: 100%;
-}
+/* underline removed for social-section titles */
 
 /* MODAL CV AMÉLIORÉE */
 .cv-modal {
@@ -1027,6 +1106,7 @@ footer {
 
     .formation-content h3 {
         font-size: 1.1rem;
+        margin-bottom: 0.6rem; /* restore spacing under formation/experience titles */
     }
 
     .formation-content .school,
@@ -1154,4 +1234,47 @@ footer {
         height: 38px;
         font-size: 1rem;
     }
+}
+
+/* Illustrations projet & modal d'aperçu */
+.project-media {
+    height: 200px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(26,115,232,0.06), rgba(0,0,0,0.02));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    overflow: hidden;
+} 
+
+.project-media svg {
+    width: 70%;
+    height: auto;
+    max-height: 110px;
+    opacity: 0.95;
+    transition: transform 0.25s ease;
+}
+
+.projet-card:hover .project-media svg {
+    transform: scale(1.02);
+}
+
+.project-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+/* Aperçus supprimés — styles du modal retirés */
+
+/* Project thumbnail inside card */
+.project-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    display: block;
 }
