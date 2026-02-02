@@ -1,4 +1,4 @@
-# Portfolio — N'Gadi Wassim
+# Portfolio — N'Gadi Wassim BTS SIO 
 
 ## 🔍 Description
 Site personnel statique présentant le profil, les compétences, les projets et les moyens de contact de N'Gadi Wassim.
