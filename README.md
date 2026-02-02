@@ -12,7 +12,7 @@ Ce dépôt contient un site HTML/CSS simple sans dépendances externes (hormis u
 - `style.css` — styles et thèmes (inclut mode sombre)
 - `CVWassim-2026.pdf` — CV utilisé par la modal de visualisation/téléchargement
 - `robots.txt`, `sitemap.xml` — fichiers SEO
-- `wass.png`, `favicon.ico` — images et icône
+- `wass1.png`, `favicon.ico` — images et icône
 
 ---
 
@@ -40,8 +40,8 @@ python -m http.server 8000
 ## ⚙️ Personnalisation
 - Mettre à jour l'**adresse email** (mailto) : modifier le lien dans `index.html` (rechercher `mailto:`).
 - Remplacer `CVWassim-2026.pdf` par la version la plus récente pour que la modal et le lien de téléchargement pointent vers le bon fichier.
-- Images et icônes : remplacer `wass.png` et `favicon.ico` par vos fichiers tout en gardant les mêmes noms ou en modifiant les références dans `index.html`.
-- Metadonnées SEO : modifier `<meta name="description">`, `<title>`, et les balises Open Graph/Twitter dans `index.html`.
+- Images et icônes : remplacer `wass1.png` et `favicon.ico` par vos fichiers tout en gardant les mêmes noms ou en modifiant les références dans `index.html`.
+- Metadonnées SEO : modifier `<meta name="description">`, `<title>`, et les balises Open Graph/Twitter dans `index.html`."}]}]
 
 ---
 

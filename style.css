@@ -218,6 +218,15 @@ nav.scrolled {
     animation: fadeInUp 0.8s ease;
     position: relative;
     z-index: 1;
+    overflow: hidden; /* Clip image to circle */
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%; /* Descend encore l'image pour mieux montrer le haut du crâne */
+    display: block;
 }
 
 @keyframes fadeInUp {
