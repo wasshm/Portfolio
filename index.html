@@ -60,6 +60,7 @@
                 <li><a href="#projets">Projets</a></li>
                 <li><a href="#formation">Formation</a></li>
                 <li><a href="#experience">Expérience</a></li>
+                <li><a href="#avis">Avis</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button id="themeToggle" class="theme-toggle">
@@ -412,10 +413,48 @@
         </div>
     </section>
 
+    <!-- SECTION AVIS / RETOURS CLIENTS & ENTREPRISES -->
+    <section id="avis">
+        <div class="container">
+            <h2>Avis — Retours Clients &amp; Entreprises</h2>
+            <div class="avis-grid">
+
+                <div class="avis-card">
+                    <div class="avis-stars">★★★★★</div>
+                    <p class="avis-text">« Wassim a fait preuve d'un grand sérieux et d'une vraie curiosité technique tout au long de son stage. Il s'est rapidement intégré à l'équipe et a géré des missions complexes avec autonomie. »</p>
+                    <div class="avis-author">
+                        <div class="avis-avatar">A2K</div>
+                        <div>
+                            <div class="avis-name">A2K Informatique</div>
+                            <div class="avis-role">Abdelkader Kadi – PDG, Dreux</div>
+                        </div>
+                    </div>
+                    <div class="avis-actions">
+                        <button class="avis-btn avis-btn--view" id="openLetterModal">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                            </svg>
+                            Voir la lettre
+                        </button>
+                        <a class="avis-btn avis-btn--dl" href="lettre-a2k.pdf" download="Lettre-recommandation-A2K-Wassim.pdf">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                            </svg>
+                            Télécharger
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
     <section id="contact">
         <div class="container">
             <h2>Me Contacter</h2>
-            <div class="contact-grid">
+            <div class="contact-grid contact-grid-3col">
                 <div class="card">
                     <h3 style="margin-bottom: 1.5rem;">Informations de contact</h3>
                     <div class="contact-item">
@@ -426,7 +465,7 @@
                         </div>
                         <div>
                             <div class="label">E-mail</div>
-                            <div class="value"><a href="mailto:ngadiwassim@hotmail.com">ngadiwassim@hotmail.com</a></div>
+                            <div class="value"><a href="mailto:ngadiwassim@hotmail.com">ngadiwassim@hgotmail.com</a></div>
                         </div>
                     </div>
 
@@ -440,6 +479,38 @@
                         <div>
                             <div class="label">Localisation</div>
                             <div class="value"><a href="https://www.google.com/maps?q=Vernouillet+28500,+Centre+Val+de+Loire" target="_blank">Vernouillet 28500, Centre Val de Loire</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FORMULAIRE DE CONTACT -->
+                <div class="card contact-form-card">
+                    <h3 style="margin-bottom: 1.5rem;">Envoyer un message</h3>
+                    <div id="contactForm">
+                        <div class="form-group">
+                            <label class="form-label" for="contactNom">Nom complet</label>
+                            <input type="text" id="contactNom" class="form-input" placeholder="Votre nom et prénom" autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="contactEmail">Adresse e-mail</label>
+                            <input type="email" id="contactEmail" class="form-input" placeholder="votre@email.com" autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="contactSujet">Sujet</label>
+                            <input type="text" id="contactSujet" class="form-input" placeholder="Objet de votre message">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="contactMessage">Message</label>
+                            <textarea id="contactMessage" class="form-input form-textarea" placeholder="Votre message..."></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-send" id="sendContactForm">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                            </svg>
+                            <span>Envoyer</span>
+                        </button>
+                        <div id="formSuccess" class="form-success" style="display:none;">
+                            ✅ Message envoyé ! Je vous répondrai dès que possible.
                         </div>
                     </div>
                 </div>
@@ -494,7 +565,28 @@
         <div class="cv-overlay"></div>
         <div class="cv-content">
             <button class="cv-close" id="closeCvModal">✕</button>
-            <iframe src="CVWassim-2026.pdf"></iframe>
+            <a class="cv-download-btn" href="cv-wassim.pdf" download="CV-Wassim-NGadi.pdf" title="Télécharger le CV en PDF">
+                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+                Télécharger
+            </a>
+            <iframe src="cv-wassim.html"></iframe>
+        </div>
+    </div>
+
+    <!-- MODAL LETTRE DE RECOMMANDATION A2K -->
+    <div class="cv-modal" id="letterModal">
+        <div class="cv-overlay" id="letterOverlay"></div>
+        <div class="cv-content">
+            <button class="cv-close" id="closeLetterModal">✕</button>
+            <a class="cv-download-btn" href="lettre-a2k.pdf" download="Lettre-recommandation-A2K-Wassim.pdf" title="Télécharger la lettre">
+                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+                Télécharger
+            </a>
+            <iframe src="lettre-a2k.pdf"></iframe>
         </div>
     </div>
 
@@ -502,7 +594,7 @@
         <p>&copy; 2025 N'Gadi Wassim</p>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Set dark mode as default
         document.documentElement.classList.add('dark-mode');
 
@@ -559,6 +651,31 @@
             }
         });
 
+        // Letter Modal (A2K)
+        const openLetterModal = document.getElementById('openLetterModal');
+        const closeLetterModal = document.getElementById('closeLetterModal');
+        const letterModal = document.getElementById('letterModal');
+        const letterOverlay = document.getElementById('letterOverlay');
+
+        function openLetter() {
+            letterModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLetter() {
+            letterModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (openLetterModal) openLetterModal.addEventListener('click', openLetter);
+        if (closeLetterModal) closeLetterModal.addEventListener('click', closeLetter);
+        if (letterOverlay) letterOverlay.addEventListener('click', closeLetter);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && letterModal.classList.contains('active')) {
+                closeLetter();
+            }
+        });
+
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -608,11 +725,48 @@
                 themeToggle.classList.remove('rotating');
             }, 600);
             
-            const isDarkMode = document.documentElement.classList.toggle('dark-mode');
-            themeIcon.textContent = isDarkMode ? '🌙' : '☀️';
+            const isDark = document.documentElement.classList.contains('dark-mode');
+            if (isDark) {
+                document.documentElement.classList.remove('dark-mode');
+                themeIcon.textContent = '🌙';
+                themeToggle.classList.remove('dark-mode');
+            } else {
+                document.documentElement.classList.add('dark-mode');
+                themeIcon.textContent = '☀️';
+                themeToggle.classList.add('dark-mode');
+            }
         });
 
-        // Aperçus supprimés — modal et code associés retirés
+        // Init theme toggle icon state
+        if (document.documentElement.classList.contains('dark-mode')) {
+            themeIcon.textContent = '☀️';
+            themeToggle.classList.add('dark-mode');
+        }
+
+        // Contact form handler
+        const sendBtn = document.getElementById('sendContactForm');
+        if (sendBtn) {
+            sendBtn.addEventListener('click', () => {
+                const nom = document.getElementById('contactNom').value.trim();
+                const email = document.getElementById('contactEmail').value.trim();
+                const sujet = document.getElementById('contactSujet').value.trim();
+                const message = document.getElementById('contactMessage').value.trim();
+
+                if (!nom || !email || !message) {
+                    alert('Veuillez remplir au moins votre nom, e-mail et message.');
+                    return;
+                }
+
+                const mailtoLink = `mailto:ngadiwassim@hotmail.com?subject=${encodeURIComponent(sujet || 'Contact depuis le portfolio')}&body=${encodeURIComponent('Nom : ' + nom + '\nE-mail : ' + email + '\n\n' + message)}`;
+                window.location.href = mailtoLink;
+
+                document.getElementById('formSuccess').style.display = 'block';
+                setTimeout(() => {
+                    document.getElementById('formSuccess').style.display = 'none';
+                }, 5000);
+            });
+        }
+
     </script>
 </body>
 </html>

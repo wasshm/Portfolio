@@ -1287,3 +1287,282 @@ footer {
     box-shadow: 0 8px 24px rgba(0,0,0,0.08);
     display: block;
 }
+
+/* =============================================
+   CONTACT FORM
+   ============================================= */
+.contact-grid-3col {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.contact-form-card {
+    position: relative;
+}
+
+.form-group {
+    margin-bottom: 1.1rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--dark-gray);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.02em;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--medium-gray);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background: var(--light-gray);
+    color: var(--text);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    outline: none;
+}
+
+.form-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(26,115,232,0.15);
+    background: var(--white);
+}
+
+.form-textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.btn-send {
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.form-success {
+    margin-top: 1rem;
+    padding: 0.8rem 1rem;
+    background: rgba(40, 167, 69, 0.12);
+    border: 1.5px solid #28a745;
+    border-radius: 10px;
+    color: #28a745;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+/* =============================================
+   SECTION AVIS
+   ============================================= */
+#avis {
+    background: var(--light-gray);
+}
+
+.avis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.avis-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.avis-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, var(--primary), #0077b5);
+    border-radius: 16px 16px 0 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.avis-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.avis-card:hover::before {
+    opacity: 1;
+}
+
+.avis-stars {
+    color: #f5a623;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+}
+
+.avis-text {
+    font-style: italic;
+    color: var(--dark-gray);
+    line-height: 1.7;
+    font-size: 0.97rem;
+    flex: 1;
+}
+
+.avis-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid var(--medium-gray);
+}
+
+.avis-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), #0077b5);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.avis-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+.avis-role {
+    font-size: 0.85rem;
+    color: var(--dark-gray);
+}
+
+/* CTA card */
+.avis-card--cta {
+    border: 2px dashed var(--medium-gray);
+    background: transparent;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.avis-card--cta::before {
+    display: none;
+}
+
+.avis-card--cta:hover {
+    border-color: var(--primary);
+    background: rgba(26,115,232,0.04);
+    transform: translateY(-5px);
+}
+
+.avis-cta-icon {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.avis-cta-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.avis-cta-text {
+    color: var(--dark-gray);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .avis-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-grid-3col {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =============================================
+   BOUTON TÉLÉCHARGEMENT DANS LE MODAL CV
+   ============================================= */
+.cv-download-btn {
+    position: absolute;
+    top: 1rem;
+    right: 4.5rem;
+    background: linear-gradient(135deg, var(--primary), #0077b5);
+    border: none;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0 1rem;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all 0.3s ease;
+    z-index: 10;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.cv-download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(10,102,194,0.4);
+}
+
+/* =============================================
+   BOUTONS AVIS (voir / télécharger lettre)
+   ============================================= */
+.avis-actions {
+    display: flex;
+    gap: 0.7rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.avis-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border: none;
+    text-decoration: none;
+}
+
+.avis-btn--view {
+    background: rgba(26,115,232,0.1);
+    color: var(--primary);
+    border: 1.5px solid var(--primary);
+}
+.avis-btn--view:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.avis-btn--dl {
+    background: rgba(40,167,69,0.1);
+    color: #28a745;
+    border: 1.5px solid #28a745;
+}
+.avis-btn--dl:hover {
+    background: #28a745;
+    color: white;
+}
