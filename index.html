@@ -20,6 +20,11 @@
     <link rel="alternate" hreflang="fr" href="https://ngadi-wassim.fr/">
     <title>N'Gadi Wassim - Portfolio | Systèmes, Réseaux & Cybersécurité</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        // ⚙️ REMPLACE PAR TA PUBLIC KEY EMAILJS
+        (function() { emailjs.init({ publicKey: "gX0-L14QzyQosDRiK" }); })();
+    </script>
     <link rel="icon" href="wassim-sf.png" type="image/png">
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href="wassim.png">
@@ -64,7 +69,6 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button id="themeToggle" class="theme-toggle">
-                <span id="themeIcon">🌙</span>
             </button>
             <button class="menu-toggle" id="menuToggle">☰</button>
         </div>
@@ -283,6 +287,19 @@
                         <a href="https://fc-fulbert-officiel.github.io/FcFulbert/index" class="projet-link" target="_blank">Visiter le site <span>→</span></a>
                     </div>
                 </div>
+
+                <div class="projet-card">
+                    <div class="project-media" aria-hidden="true">
+                        <img src="dragon.png" alt="Miniature — Site web / SEO" class="project-thumb" loading="lazy">
+                    </div>
+                    <h3>Site Web : Zoo Fulbert - Projet BTS SIO</h3>
+                    <p class="projet-desc">Conception & développement d'un site web dans le cadre du bloc : Culture Generale & Expression</p>
+                    <div class="tech-tags"></div>
+                    <div class="project-actions">
+                        <a href="https://zoofulbert.com/#grilleAnimaux" class="projet-link" target="_blank">Accueil par Wassim <span>→</span></a>
+                        <a href="https://zoofulbert.com/Wassim/index.html" class="projet-link" target="_blank">Dragon par Wassim <span>→</span></a>
+                    </div>
+                </div>
             </div>
 
 
@@ -426,7 +443,7 @@
                         <div class="avis-avatar">A2K</div>
                         <div>
                             <div class="avis-name">A2K Informatique</div>
-                            <div class="avis-role">Abdelkader Kadi – PDG, Dreux</div>
+                            <div class="avis-role">Abdelkader Kadi – Gérant, Dreux</div>
                         </div>
                     </div>
                     <div class="avis-actions">
@@ -437,12 +454,6 @@
                             </svg>
                             Voir la lettre
                         </button>
-                        <a class="avis-btn avis-btn--dl" href="lettre-a2k.pdf" download="Lettre-recommandation-A2K-Wassim.pdf">
-                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-                            </svg>
-                            Télécharger
-                        </a>
                     </div>
                 </div>
 
@@ -454,35 +465,7 @@
     <section id="contact">
         <div class="container">
             <h2>Me Contacter</h2>
-            <div class="contact-grid contact-grid-3col">
-                <div class="card">
-                    <h3 style="margin-bottom: 1.5rem;">Informations de contact</h3>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="label">E-mail</div>
-                            <div class="value"><a href="mailto:ngadiwassim@hotmail.com">ngadiwassim@hgotmail.com</a></div>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="label">Localisation</div>
-                            <div class="value"><a href="https://www.google.com/maps?q=Vernouillet+28500,+Centre+Val+de+Loire" target="_blank">Vernouillet 28500, Centre Val de Loire</a></div>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="contact-grid contact-grid-2col">
                 <!-- FORMULAIRE DE CONTACT -->
                 <div class="card contact-form-card">
                     <h3 style="margin-bottom: 1.5rem;">Envoyer un message</h3>
@@ -510,8 +493,9 @@
                             <span>Envoyer</span>
                         </button>
                         <div id="formSuccess" class="form-success" style="display:none;">
-                            ✅ Message envoyé ! Je vous répondrai dès que possible.
+                            ✅ Message reçu ! Je vous répondrai dès que possible.
                         </div>
+                        <div id="formError" class="form-error" style="display:none;"></div>
                     </div>
                 </div>
 
@@ -555,6 +539,17 @@
                                 <div style="font-size: 0.9rem; color: var(--dark-gray);">Télécharger mon CV</div>
                             </div>
                         </button>
+                        <a href="mailto:ngadiwassim@hotmail.com" class="social-link email">
+                            <span class="social-link-icon">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </span>
+                            <div>
+                                <div style="font-weight: 700;">E-mail</div>
+                                <div style="font-size: 0.9rem; color: var(--dark-gray);">ngadiwassim@hotmail.com</div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -565,7 +560,7 @@
         <div class="cv-overlay"></div>
         <div class="cv-content">
             <button class="cv-close" id="closeCvModal">✕</button>
-            <a class="cv-download-btn" href="cv-wassim.pdf" download="CV-Wassim-NGadi.pdf" title="Télécharger le CV en PDF">
+            <a class="cv-download-btn" href="CVWassim-2026.pdf" download="CV-Wassim-NGadi.pdf" title="Télécharger le CV en PDF">
                 <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                 </svg>
@@ -580,13 +575,13 @@
         <div class="cv-overlay" id="letterOverlay"></div>
         <div class="cv-content">
             <button class="cv-close" id="closeLetterModal">✕</button>
-            <a class="cv-download-btn" href="lettre-a2k.pdf" download="Lettre-recommandation-A2K-Wassim.pdf" title="Télécharger la lettre">
+            <a class="cv-download-btn" href="Lettre Recommandation - N.Wassim.pdf" download="Lettre Recommandation - N.Wassim.pdf" title="Télécharger la lettre">
                 <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                 </svg>
                 Télécharger
             </a>
-            <iframe src="lettre-a2k.pdf"></iframe>
+            <iframe src="Lettre Recommandation - N.Wassim.pdf"></iframe>
         </div>
     </div>
 
@@ -725,45 +720,55 @@
                 themeToggle.classList.remove('rotating');
             }, 600);
             
-            const isDark = document.documentElement.classList.contains('dark-mode');
-            if (isDark) {
-                document.documentElement.classList.remove('dark-mode');
-                themeIcon.textContent = '🌙';
-                themeToggle.classList.remove('dark-mode');
-            } else {
-                document.documentElement.classList.add('dark-mode');
-                themeIcon.textContent = '☀️';
-                themeToggle.classList.add('dark-mode');
-            }
+            const isDarkMode = document.documentElement.classList.toggle('dark-mode');
+            themeIcon.textContent = isDarkMode ? '🌙' : '☀️';
         });
 
-        // Init theme toggle icon state
-        if (document.documentElement.classList.contains('dark-mode')) {
-            themeIcon.textContent = '☀️';
-            themeToggle.classList.add('dark-mode');
-        }
-
-        // Contact form handler
+        // Contact form handler — EmailJS
         const sendBtn = document.getElementById('sendContactForm');
         if (sendBtn) {
             sendBtn.addEventListener('click', () => {
-                const nom = document.getElementById('contactNom').value.trim();
-                const email = document.getElementById('contactEmail').value.trim();
-                const sujet = document.getElementById('contactSujet').value.trim();
+                const nom     = document.getElementById('contactNom').value.trim();
+                const email   = document.getElementById('contactEmail').value.trim();
+                const sujet   = document.getElementById('contactSujet').value.trim();
                 const message = document.getElementById('contactMessage').value.trim();
+                const success = document.getElementById('formSuccess');
+                const errorEl = document.getElementById('formError');
 
                 if (!nom || !email || !message) {
-                    alert('Veuillez remplir au moins votre nom, e-mail et message.');
+                    errorEl.textContent = '⚠️ Veuillez remplir votre nom, e-mail et message.';
+                    errorEl.style.display = 'block';
+                    setTimeout(() => { errorEl.style.display = 'none'; }, 4000);
                     return;
                 }
 
-                const mailtoLink = `mailto:ngadiwassim@hotmail.com?subject=${encodeURIComponent(sujet || 'Contact depuis le portfolio')}&body=${encodeURIComponent('Nom : ' + nom + '\nE-mail : ' + email + '\n\n' + message)}`;
-                window.location.href = mailtoLink;
+                // Désactiver le bouton pendant l'envoi
+                sendBtn.disabled = true;
+                sendBtn.innerHTML = `<svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="animation:spin 1s linear infinite"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 100 16 8 8 0 010-16"/></svg><span>Envoi...</span>`;
 
-                document.getElementById('formSuccess').style.display = 'block';
-                setTimeout(() => {
-                    document.getElementById('formSuccess').style.display = 'none';
-                }, 5000);
+                // ⚙️ REMPLACE PAR TON SERVICE ID ET TEMPLATE ID
+                emailjs.send("service_8cs9ix3", "template_9sskaz8", {
+                    from_name:    nom,
+                    from_email:   email,
+                    subject:      sujet || 'Contact depuis le portfolio',
+                    message:      message,
+                    to_email:     'ngadiwassim@hotmail.com'
+                }).then(() => {
+                    success.style.display = 'block';
+                    document.getElementById('contactNom').value     = '';
+                    document.getElementById('contactEmail').value   = '';
+                    document.getElementById('contactSujet').value   = '';
+                    document.getElementById('contactMessage').value = '';
+                    setTimeout(() => { success.style.display = 'none'; }, 5000);
+                }).catch((err) => {
+                    errorEl.textContent = '❌ Erreur lors de l\'envoi. Réessayez ou contactez-moi directement par e-mail.';
+                    errorEl.style.display = 'block';
+                    setTimeout(() => { errorEl.style.display = 'none'; }, 6000);
+                    console.error('EmailJS error:', err);
+                }).finally(() => {
+                    sendBtn.disabled = false;
+                    sendBtn.innerHTML = `<svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg><span>Envoyer</span>`;
+                });
             });
         }
 

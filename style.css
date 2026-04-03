@@ -251,7 +251,7 @@ nav.scrolled {
 
 .subtitle {
     font-size: 1.5rem;
-    color: var(--dark-gray);
+    color: var(--primary);
     margin-bottom: 1.5rem;
     animation: fadeInUp 0.8s ease 0.4s backwards;
     font-weight: 500;
@@ -397,6 +397,7 @@ section h2 {
     display: inline-block;
     left: 50%;
     transform: translateX(-50%);
+    color: var(--primary);
 }
 
 section h2::after {
@@ -857,9 +858,19 @@ section h2::after {
 .social-section h3 {
     position: relative;
     display: inline-block;
+    color: #ffffff;
 }
 
 /* underline removed for social-section titles */
+
+/* FORMATION & PROJECTS */
+.formation-content h3 {
+    color: #ffffff;
+}
+
+.projet-card h3 {
+    color: var(--primary);
+}
 
 /* MODAL CV AMÉLIORÉE */
 .cv-modal {
